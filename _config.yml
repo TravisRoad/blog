@@ -106,3 +106,25 @@ deploy:
   repo: git@github.com:TravisRoad/TravisRoad.github.io.git
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: "“”‘’"
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-emoji
+  anchors:
+    level: 2
+    collisionSuffix: "v"
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ""
