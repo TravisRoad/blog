@@ -16,15 +16,6 @@ categories:
 date: 2022-01-14 18:17:00
 ---
 
----
-
-# {{ title }}
-
-
----
-
-# {{ title }}
-
 ## 代码
 
 ```html
@@ -55,6 +46,8 @@ const edit = (record: any) => {
   editor.create();
 };
 ```
+
+<!-- more -->
 
 ## 现象
 

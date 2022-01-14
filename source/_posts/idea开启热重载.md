@@ -11,10 +11,6 @@ categories:
   - [Java, Spring boot]
   - [code, error]
 ---
-d
----
-
-## idea 开启热重载的问题
 
 [解决链接](https://youtrack.jetbrains.com/issue/IDEA-274903)
 
