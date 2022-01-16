@@ -9,10 +9,8 @@ tags:
   - js
   - ts
 categories:
-  - - code
-    - error
-  - - javascript
-    - Vue3
+  - [技术, code, error]
+  - [技术, javascript, Vue3]
 date: 2022-01-14 18:17:00
 ---
 

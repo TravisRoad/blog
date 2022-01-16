@@ -8,8 +8,8 @@ tags:
   - Spring
   - Spring boot
 categories:
-  - [Java, Spring boot]
-  - [code, error]
+  - [技术,Java, Spring boot]
+  - [技术,code, error]
 ---
 
 [解决链接](https://youtrack.jetbrains.com/issue/IDEA-274903)

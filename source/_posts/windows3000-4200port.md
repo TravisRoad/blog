@@ -7,8 +7,7 @@ tags:
   - bug
   - error
 categories:
-  - windows
-  - [code, error]
+  - [技术, code, error]
 ---
 
 ---

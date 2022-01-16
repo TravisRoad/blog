@@ -2,7 +2,13 @@
 title: jpa的lazy加载问题
 date: 2022-01-07 18:12:55
 tags:
+  - Java
+  - jpa
+  - Springboot
+  - eager
+  - lazy
 categories:
+  - [技术, Java, Spring]
 ---
 
 ## 问题
