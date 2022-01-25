@@ -28,7 +28,7 @@ date: 2022-01-14 18:17:00
 </template>
 ```
 
-```ts
+```typescript
 import Editor from "wangeditor"; // a Rich Text Format Editor
 
 // variables has been declared
@@ -59,7 +59,7 @@ const edit = (record: any) => {
 
 我的猜测是只有在数据源准备好的时候 a-modal 才会显示，所以我把 `treeSelectData.value.unshift({ id: "0", name: "root" });` 加上 `await` 就能解决问题了。
 
-```ts
+```typescript
 import Editor from "wangeditor"; // a Rich Text Format Editor
 
 // variables has been declared
@@ -92,12 +92,10 @@ handleQueryContent(record).then(editor.txt.html);
 
 1. 使用箭头函数或者匿名函数就可以了，如下:
 
-   ```typeScript
-   handleQueryContent(record).then(
-     (val: string) => {
-       editor.txt.html(val);
-     }
-   );
+   ```typescript
+   handleQueryContent(record).then((val: string) => {
+     editor.txt.html(val);
+   });
    ```
 
 2. 如果是自己写代码，也可以在 `editor`实例化的时候将 `this` 绑定到 `editor` 上[^1]
