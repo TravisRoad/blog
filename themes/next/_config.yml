@@ -86,7 +86,7 @@ footer:
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
   license: by-nc-sa
-  sidebar: true
+  sidebar: false
   post: true
   language: zh-cn
 
@@ -197,6 +197,7 @@ links_settings:
   layout: block
 
 links:
+  RiddMa: https://blog.riddma.com/
   #Title: http://yoursite.com
 
 # Table of Contents in the Sidebar
