@@ -1,5 +1,5 @@
 ---
-title: jpa的lazy加载问题
+title: jpa 的 lazy 加载问题
 date: 2022-01-07 18:12:55
 tags:
   - Java
@@ -8,7 +8,7 @@ tags:
   - eager
   - lazy
 categories:
-  - [技术, Java, Spring]
+  - [技术]
 ---
 
 ## 问题

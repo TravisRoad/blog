@@ -1,5 +1,5 @@
 ---
-title: javascript 的异步问题和this问题
+title: javascript 的异步问题和 this 问题
 tags:
   - 前端
   - Vue3
@@ -9,8 +9,7 @@ tags:
   - js
   - ts
 categories:
-  - [技术, code, error]
-  - [技术, javascript, Vue3]
+  - 技术
 date: 2022-01-14 18:17:00
 ---
 
@@ -90,7 +89,7 @@ handleQueryContent(record).then(editor.txt.html);
 
 ### 解决办法
 
-1. 使用箭头函数或者匿名函数就可以了，如下:
+1. 使用箭头函数或者匿名函数就可以了，如下：
 
    ```typescript
    handleQueryContent(record).then((val: string) => {
@@ -98,8 +97,8 @@ handleQueryContent(record).then(editor.txt.html);
    });
    ```
 
-2. 如果是自己写代码，也可以在 `editor`实例化的时候将 `this` 绑定到 `editor` 上[^1]
-3. 也可以在对象实例化的时候用 `that` 获取 `this`，之后一直用 `that` 就没有歧义了[^2]
+2. 如果是自己写代码，也可以在 `editor`实例化的时候将 `this` 绑定到 `editor` 上 [^1]
+3. 也可以在对象实例化的时候用 `that` 获取 `this`，之后一直用 `that` 就没有歧义了 [^2]
 
 ## 参考资料
 

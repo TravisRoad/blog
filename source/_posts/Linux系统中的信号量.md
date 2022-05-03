@@ -1,11 +1,10 @@
 ---
-title: Linux系统中的信号量
+title: Linux 系统中的信号量
 tags:
     - Linux
     - Signal
 categories:
     - 技术
-    - Linux
 alias: Kill vs term vs int vs quit signals
 quota: https://www.semicolonandsons.com/code_diary/unix/kill-vs-term-vs-int-vs-quit-signals
 date: 2022-02-28 20:53:56

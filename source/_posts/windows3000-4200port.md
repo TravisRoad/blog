@@ -7,7 +7,7 @@ tags:
   - bug
   - error
 categories:
-  - [技术, code, error]
+  - 技术
 ---
 
 ---

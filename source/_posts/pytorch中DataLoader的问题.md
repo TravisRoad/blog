@@ -1,5 +1,5 @@
 ---
-title: pytorch中DataLoader的问题
+title: pytorch 中 DataLoader 的问题
 date: 2022-01-25 22:09:14
 tags:
   - python
@@ -7,8 +7,7 @@ tags:
   - DataLoader
   - error
 categories:
-  - [技术, Python, pytorch]
-  - [技术, code, error]
+  - 技术
 ---
 
 ## 复现问题

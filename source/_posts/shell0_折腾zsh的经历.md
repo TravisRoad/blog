@@ -1,12 +1,12 @@
 ---
-title: 利用fzf实现的历史记录
+title: 利用 fzf 实现的历史记录
 date: 2022-05-01 00:35:59
 tags:
   - zsh
   - fzf
   - linux
 categories:
-  - [技术, linux]
+  - [技术]
 ---
 
 ## 设置历史命令查看
@@ -53,7 +53,7 @@ history -n | awk '!seen[$0]++' | fzf -e --reverse --no-sort --tac --border=round
  6179  which history
 ```
 
-管道中的第二命令 `awk '!seen[$0]++'` 是用来去重的[^1]，使用 `uniq` 命令的话需要将 history 排序，并不符合我们的需求。
+管道中的第二命令 `awk '!seen[$0]++'` 是用来去重的 [^1]，使用 `uniq` 命令的话需要将 history 排序，并不符合我们的需求。
 
 最后就是 `fzf` 命令了。简单解释一下，`fzf` 能接受多行输入，将之变成一个选择界面。`--reverse --border=rounded --height=50%` 这几个选项都是调整布局的选项。其他几个选项的解释如下。
 

@@ -5,7 +5,6 @@ tags:
   - Linux
   - Ubuntu
 categories:
-  - 技术
   - Linux
 date: 2022-03-24 22:35:56
 ---
