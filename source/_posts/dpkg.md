@@ -9,10 +9,7 @@ categories:
 date: 2022-03-24 22:35:56
 ---
 
-# {{ title }}
-
-
-# dpkg 误删除 info 目录
+## dpkg 误删除 info 目录
 
 最近开始用 `Linux` 了， 比较怂所以采用了对新手比较友好的 `ubuntu`。
 
