@@ -1,5 +1,5 @@
 ---
-title: 用flutter写一个小应用吧
+title: 用 flutter 写一个小应用吧
 date: 2021-05-08 01:08:44
 updated: 2021-05-08 01:08:44
 tags:
