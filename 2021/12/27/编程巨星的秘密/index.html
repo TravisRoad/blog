@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"travisroad.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"travisroad.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="转载自https:&#x2F;&#x2F;www.codesimplicity.com&#x2F;post&#x2F;the-singular-secret-of-the-rockstar-programmer&#x2F;  别以为是那些软件开发定律，别以为是开发出那些特殊用途的软件，别以为是软件设计技术本身。只有一条真理决定了一个软件程序员的成功还是失败。由于坚持这个真理，一个资深的程序员能在一天的时间里学会一门新的编程语言，而由于不坚持这条">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="转载自https:&#x2F;&#x2F;www.codesimplicity.com&#x2F;post&#x2F;the-singular-secret-of-the-rockstar-programmer&#x2F;  别以为是那些软件开发定律，别以为是开发出那些特殊用途的软件，别以为是软件设计技术本身。只有一条真理决定了一个软件程序员的成功还是失败。由于坚持这个真理，一个资深的程序员能在一天的时间里学会一门新的编程语言，而由于不坚持这条">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-27T04:02:12.000Z">
-<meta property="article:modified_time" content="2022-03-24T14:34:21.348Z">
+<meta property="article:modified_time" content="2022-05-03T16:35:58.700Z">
 <meta property="article:author" content="Travis">
 <meta property="article:tag" content="comment">
 <meta property="article:tag" content="引用">
@@ -78,6 +78,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Travis' Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -105,6 +106,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -134,11 +136,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -168,7 +202,7 @@
     <link itemprop="mainEntityOfPage" href="https://travisroad.github.io/2021/12/27/%E7%BC%96%E7%A8%8B%E5%B7%A8%E6%98%9F%E7%9A%84%E7%A7%98%E5%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/image/avatar.png">
       <meta itemprop="name" content="Travis">
       <meta itemprop="description" content="">
     </span>
@@ -195,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-24 22:34:21" itemprop="dateModified" datetime="2022-03-24T22:34:21+08:00">2022-03-24</time>
+                <time title="修改时间：2022-05-04 00:35:58" itemprop="dateModified" datetime="2022-05-04T00:35:58+08:00">2022-05-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,11 +237,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AC%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">转载</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AC%E8%BD%BD/%E5%BC%95%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">引用</span></a>
+                  <a href="/categories/%E5%BC%95%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">引用</span></a>
                 </span>
             </span>
 
@@ -240,18 +270,35 @@
 <p>超级程序员跟那些平庸的、一般的程序员比起来，对自己要做的事情的理解要深的多的多。这就是原因。</p>
 <p>要想成为一名出色的程序员，你所要做的就是完全的理解要在做的事情。</p>
 <p>有人会说，该知道的我都知道了。而对说这话的人的验证就是看他们能有应用他们知道的知识的能力。是否他能够构造出完美的系统架构，让人们能轻松的维护？是否他能在不皱眉头的情况下把一个普通程序员毫无可能解决的问题轻松解决掉？是否他能在被询问时能用最简单的概念把任何问题都阐述明白？如果能够，那他就是一个杰出的程序员，他能很好的理解了他在做的事情。</p>
-<p>然而，尽管这些人看起来已经“无所不知”，很多的程序员(包括我)都感觉他们仍然在知识的海洋里奋斗不已。有如此多的东西需要去学习，一个人几乎要花费他毕生的心力去学习，但仍然很难说能掌握计算机知识的 90%。</p>
+<p>然而，尽管这些人看起来已经“无所不知”，很多的程序员 (包括我) 都感觉他们仍然在知识的海洋里奋斗不已。有如此多的东西需要去学习，一个人几乎要花费他毕生的心力去学习，但仍然很难说能掌握计算机知识的 90%。</p>
 <p>而这场持久战中的秘密武器、战胜计算机知识的亚瑟王的神剑，就是透彻理解。对你的领域里的基础知识理解的越好，你就越容易提升到更高的层次。你对这一层次的知识理解的越好，你就更容易掌握下一层次，以此类推。一旦你从最简单最基础的知识走到最高级最复杂的理论，你可以从头再过一遍，此时你会惊奇的发现，在最低最底的底层，竟然还有那么多知识需要学习。</p>
 <p>看起来这个道理实在是太简单，难以受到重视，但事实就是这样。通往杰出的程序员的道路就是完全的深入的理解，从掌握精通最基本的知识开始，从而逐渐牢固掌握更高级的知识。</p>
 <p>我不想骗你—这是一个很长的路程。但你是值得去做的。在路的尽头，你会突然发现，自己神奇的成为了一位资深的程序员，受到所有人的尊敬。你能成为一位神奇的程序员，任何事情都难不倒的程序员，让其他程序员都羡慕的程序员。谁能预料到呢？我不能告诉你你该做什么或能成为什么。但我可以告诉你我发现一些真实的道理和有价值的东西。怎么去做全在于自己。</p>
 <p>-Max</p>
-<p>原文链接(<a target="_blank" rel="noopener" href="https://www.codesimplicity.com/post/the-singular-secret-of-the-rockstar-programmer/">https://www.codesimplicity.com/post/the-singular-secret-of-the-rockstar-programmer/</a>)</p>
+<p>原文链接 (<a target="_blank" rel="noopener" href="https://www.codesimplicity.com/post/the-singular-secret-of-the-rockstar-programmer/">https://www.codesimplicity.com/post/the-singular-secret-of-the-rockstar-programmer/</a>)</p>
 
     </div>
 
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Travis
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://travisroad.github.io/2021/12/27/%E7%BC%96%E7%A8%8B%E5%B7%A8%E6%98%9F%E7%9A%84%E7%A7%98%E5%AF%86/" title="编程巨星的秘密">https://travisroad.github.io/2021/12/27/编程巨星的秘密/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -269,8 +316,8 @@
       <i class="fa fa-chevron-left"></i> 失控玩家
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/12/27/spring%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF/" rel="next" title="Spring配置maven错误">
-      Spring配置maven错误 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/27/spring%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF/" rel="next" title="Spring 配置 maven 错误">
+      Spring 配置 maven 错误 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -335,6 +382,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Travis"
+      src="/image/avatar.png">
   <p class="site-author-name" itemprop="name">Travis</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -350,7 +399,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -365,9 +414,25 @@
       <span class="links-of-author-item">
         <a href="https://github.com/TravisRoad" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;TravisRoad" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="mailto:eckza3mv1@mozmail.com" title="E-Mail → mailto:eckza3mv1@mozmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.riddma.com/" title="https:&#x2F;&#x2F;blog.riddma.com&#x2F;" rel="noopener" target="_blank">RiddMa</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -397,8 +462,6 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
         
 <div class="busuanzi-count">
@@ -435,6 +498,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -452,6 +516,37 @@
 
 
   
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -463,9 +558,22 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
-
+  
 
   
 

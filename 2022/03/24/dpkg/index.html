@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"travisroad.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"travisroad.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="dpkg dpkg 误删除 info 目录 最近开始用 Linux 了， 比较怂所以采用了对新手比较友好的 ubuntu。 在安装 wine 的时候手抖把 info 目录删除了，这个目录是用来存储 dpkg 的安装信息的。之后的安装都会弹出 warning， 显示一堆软件找不到。 应用了以下两个命令之后可以解决大部分的警告。说的简单一点就是把软件重新装了一遍。剩下的警告可以手动解决。[1] sud">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="dpkg dpkg 误删除 info 目录 最近开始用 Linux 了， 比较怂所以采用了对新手比较友好的 ubuntu。 在安装 wine 的时候手抖把 info 目录删除了，这个目录是用来存储 dpkg 的安装信息的。之后的安装都会弹出 warning， 显示一堆软件找不到。 应用了以下两个命令之后可以解决大部分的警告。说的简单一点就是把软件重新装了一遍。剩下的警告可以手动解决。[1] sud">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-24T14:35:56.000Z">
-<meta property="article:modified_time" content="2022-03-24T14:55:12.634Z">
+<meta property="article:modified_time" content="2022-05-03T16:36:21.392Z">
 <meta property="article:author" content="Travis">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="dpkg">
@@ -79,6 +79,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Travis' Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -106,6 +107,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -135,11 +137,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -169,7 +203,7 @@
     <link itemprop="mainEntityOfPage" href="https://travisroad.github.io/2022/03/24/dpkg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/image/avatar.png">
       <meta itemprop="name" content="Travis">
       <meta itemprop="description" content="">
     </span>
@@ -188,21 +222,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-24 22:35:56 / 修改时间：22:55:12" itemprop="dateCreated datePublished" datetime="2022-03-24T22:35:56+08:00">2022-03-24</time>
+              <time title="创建时间：2022-03-24 22:35:56" itemprop="dateCreated datePublished" datetime="2022-03-24T22:35:56+08:00">2022-03-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-04 00:36:21" itemprop="dateModified" datetime="2022-05-04T00:36:21+08:00">2022-05-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
             </span>
 
@@ -246,6 +282,23 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Travis
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://travisroad.github.io/2022/03/24/dpkg/" title="dpkg">https://travisroad.github.io/2022/03/24/dpkg/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -260,12 +313,12 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/28/Linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%BF%A1%E5%8F%B7%E9%87%8F/" rel="prev" title="Linux系统中的信号量">
-      <i class="fa fa-chevron-left"></i> Linux系统中的信号量
+    <a href="/2022/02/28/Linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%BF%A1%E5%8F%B7%E9%87%8F/" rel="prev" title="Linux 系统中的信号量">
+      <i class="fa fa-chevron-left"></i> Linux 系统中的信号量
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/05/01/shell0_%E6%8A%98%E8%85%BEzsh%E7%9A%84%E7%BB%8F%E5%8E%86/" rel="next" title="利用fzf实现的历史记录">
-      利用fzf实现的历史记录 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/05/01/shell0_%E6%8A%98%E8%85%BEzsh%E7%9A%84%E7%BB%8F%E5%8E%86/" rel="next" title="利用 fzf 实现的历史记录">
+      利用 fzf 实现的历史记录 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -331,6 +384,8 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Travis"
+      src="/image/avatar.png">
   <p class="site-author-name" itemprop="name">Travis</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -346,7 +401,7 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -361,9 +416,25 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
       <span class="links-of-author-item">
         <a href="https://github.com/TravisRoad" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;TravisRoad" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="mailto:eckza3mv1@mozmail.com" title="E-Mail → mailto:eckza3mv1@mozmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.riddma.com/" title="https:&#x2F;&#x2F;blog.riddma.com&#x2F;" rel="noopener" target="_blank">RiddMa</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -393,8 +464,6 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
         
 <div class="busuanzi-count">
@@ -431,6 +500,7 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -448,6 +518,37 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 
 
   
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -459,9 +560,22 @@ done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
-
+  
 
   
 
